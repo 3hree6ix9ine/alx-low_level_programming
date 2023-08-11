@@ -7,29 +7,12 @@
 
 int main(void)
 {
-	int a, b;
+	int n = 97;
 
-	a = '0';
-	b = '0';
-
-	while (a <= '9')
+	while (n <= 122)
 	{
-		while (b <= '9')
-		{
-			if (a < b)
-			{
-				putchar(a);
-				putchar(b);
-				if (a != '8' || (a == '8' && b != '9'))
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-			a++;
-		}
-		a++;
-		b = '0';
+		putchar(n);
+		n++;
 	}
 	putchar('\n');
 	return (0);
