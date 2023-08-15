@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * main - Entry point
  * Description: unction that prints the last digit of a number
