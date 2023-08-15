@@ -1,15 +1,13 @@
 #include "main.h"
 /**
- * main - Entry points.
- * Description: alphabet in lowercase
- * Return: eachtime  0
+ * print_alphabet - write lower-case alphabet on a line
  */
 
 void print_alphabet(void)
 {
 	int n;
 
-	for (n=97; n <= 122; n++)
+	for (n = 97; n <= 122; n++)
 	{
 		_putchar(n);
 	}
