@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - Entry point
+ * main - Entry points.
  * Description: alphabet in lowercase
  * Return: eachtime  0
  */
@@ -14,3 +14,4 @@ void print_alphabet(void)
 		_putchar(n);
 	}
 	_putchar('\n');
+}
