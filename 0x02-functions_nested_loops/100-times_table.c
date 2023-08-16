@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 * print_times_table - prints the times table
 * parameter
@@ -8,7 +9,7 @@
 void print_times_table(int z)
 {
 	int digit, mult, result;
-	
+
 	if (z <= 15 && z >= 0)
 	{
 		for (digit = 0; digit <= z; digit++)
@@ -20,7 +21,7 @@ void print_times_table(int z)
 				_putchar(',');
 				_putchar(' ');
 				result = digit * mult;
-				
+
 				if (result <= 99)
 					_putchar(' ');
 
