@@ -1,55 +1,62 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- *print_buffer -  C function that prints the content of an
- *  inputted number of bytes from a buffer.
- * Prints 10 bytes per line.
- * Starts with the position of the first byte in hexadecimal (8 chars),
- * starting with `0`.
- * Each line shows the hexadecimal content (2 chars) of the buffer,
- * 2 bytes at a time, separated by a space.
- * Each line shows the content of the buffer.
- * Prints the byte if it is printable; if not, prints `.`.
- * Each line ends with a new line `\n`.
- * If the inputted byte size is 0 or less, the function only prints a new line.
- *@b: number of bytes
- *@size: size of the byte
+ * print_line - function that prints a buffer
+ * @c: buffer
+ * @s: bytes to print
+ * @l: line of buffer
+ * Return: eachtime 0
  */
 
-void print_buffer(char *b, int size)
+void print_line(char *c, int s, int l)
 {
-	int x = 0, y;
+	int y, k;
 
-	if (size < 0)
+	for (y = 0; y <= 9; y++)
 	{
-		printf('\n');
-		return;
+		if (y <= s)
+			printf("%02x", c[l * 10 + y]);
+		else
+			printf("  ");
+		if (y % 2)
+			putchar(' ');
 	}
-
-	while (x < size)
+	for (k = 0; k <= s; k++)
 	{
-		if (x % 10 == 0)
-			printf("%08x: ", x);
-		for (y = x; y < x + 9; y += 2)
-		{
-			if ((y < size) && ((y + 1) < size))
-				printf("%02x%02x: ", b[y], b[y + 1]);
-			else
-			{
-				while (++y <= x + 10)
-					printf(" ");
-				printf(" ");
-			}
-		}
-		for (y = x; y < x + 9 && y < size; y++)
-		{
-			if (b[y] >= 32 && b[y] <= 126)
-				printf("%c", b[y]);
-			else
-				printf(".");
-		}
-		printf('\n');
-		x += 10;
+		if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
+			putchar(c[l * 10 + k]);
+		else
+			putchar('.');
 	}
 }
+
+/**
+ * print_buffer - prints a buffer
+ * @b: buffer to print
+ * @size: size of buffer
+ *
+ * Return: void
+ */
+void print_buffer(char *b, int size)
+{
+	int x;
+
+	for (x = 0; x <= (size - 1) / 10 && size; x++)
+	{
+		printf("%08x: ", x * 10);
+		if (x < size / 10)
+		{
+			print_line(b, 9, x);
+		}
+		else
+		{
+			print_line(b, size % 10 - 1, x);
+		}
+		putchar('\n');
+	}
+	if (size == 0)
+		putchar('\n');
+}
+
 
