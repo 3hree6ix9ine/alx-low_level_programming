@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-* main - program that adds positive numbers
+* main - program that adds positive numbers.
 * @argc: the number of command line arguments
 * @argv: the array of command line  arguments
 * Return: eachtime (0), if fail else (1)
