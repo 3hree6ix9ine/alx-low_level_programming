@@ -2,7 +2,7 @@
 #define MACRO_H
 
 /**
-*File: file that defines a macro named SIZE as an abbreviation.
+*File: file that define a macro named SIZE as an abbreviation
 *Desc: header file
 */
 
