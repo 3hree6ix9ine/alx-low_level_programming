@@ -4,7 +4,7 @@
 
 
 /**
- * op_add - returns the sum of a and b
+ * op_add - returns the sum of a and b.
  * @a: the first number
  * @b: the second number
  * Return: the sum of a and b
