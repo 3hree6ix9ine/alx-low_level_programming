@@ -1,9 +1,8 @@
-#include <string.h>
 #include "3-calc.h"
 
 
 /**
- * get_op_func - function that selects the operation asked by the user.
+ * get_op_func - function that selects operation asked by the user
  * @s: operator argument
  * Return: resulting choice
  */
@@ -18,10 +17,16 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (ops[i].op != NULL && *(ops[i].op) != *s)
+	i = 0;
+
+	while (ops[i].op)
+	{
+		if (strcmp(ops[i].op, s) == 0)
+			return (ops[i].f);
 		i++;
+	}
 
-	return (ops[i].f);
+	return (NULL);
 }
