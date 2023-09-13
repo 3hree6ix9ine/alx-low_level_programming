@@ -3,9 +3,9 @@
 
 /**
  * array_iterator - function given as parameter on each element of an array
- * @array: array to iterate
- * @size: size of the array
- * @action: function pointer to array
+ * @array: array to iterate.
+ * @size: size of the array.
+ * @action: function pointer to array.
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
