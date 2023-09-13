@@ -1,4 +1,2 @@
-*-main.c
-c
-b
-a
+tests/
+main.c
