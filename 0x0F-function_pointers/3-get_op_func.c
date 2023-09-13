@@ -1,13 +1,10 @@
-#endif /* CALC_H */
-
-
 #include <stdio.h>
 #include <string.h>
 #include "3-calc.h"
 
 /**
  * get_op_func - function that selects operation asked by the user
- * @s: operator argument
+ * @s: operator argument.
  * Return: resulting choice
  */
 
