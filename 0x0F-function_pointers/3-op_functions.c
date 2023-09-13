@@ -1,10 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
 
 
 /**
- * op_add - returns the sum of a and b.
+ * op_add - returns the sum of a and b
  * @a: the first number
  * @b: the second number
  * Return: the sum of a and b
@@ -44,17 +42,12 @@ int op_mul(int a, int b)
  * op_div - returns the result of the division of a by b
  * @a: the first number
  * @b: the second number
- * Return: div a / b
+ * Return: quotient of a and b
  */
 
 
 int op_div(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 	return (a / b);
 }
 
@@ -68,10 +61,5 @@ int op_div(int a, int b)
 
 int op_mod(int a, int b)
 {
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 	return (a % b);
 }
