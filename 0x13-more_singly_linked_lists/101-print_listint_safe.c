@@ -5,9 +5,8 @@
 /**
  * print_listint_safe - function that prints a listint_t linked list.
  * @head: first node in the list
- * Return: eachtime, the number of nodes
+ * Return: eachtime, the number of nodes.
  */
-
 
 size_t print_listint_safe(const listint_t *head)
 {
@@ -17,7 +16,8 @@ size_t print_listint_safe(const listint_t *head)
 	size_t new_n;
 
 	tmp_n = head;
-	do	{
+	while (tmp_n)
+	{
 		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
 		counter++;
 		tmp_n = tmp_n->next;
@@ -35,8 +35,6 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		if (!head)
 			exit(98);
-	} while (tmp_n);
-
+	}
 	return (counter);
 }
-
