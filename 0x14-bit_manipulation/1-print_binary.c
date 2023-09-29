@@ -1,16 +1,32 @@
 #include "main.h"
+#include <stdio.h>
+
 
 /**
  * print_binary - function that prints the binary representation of a num
- * @n: decimal number to print as binary
- * Return: eachtime, (void)
+ * @n: number to print as binary
  */
 
 
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
-		print_binary(n >> 1);
+	unsigned long int temp;
+	int shifts;
 
-	_putchar((n & 1) + '0');
+	if (n == 0)
+	{
+		printf("0");
+		return;
+	}
+
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
+		;
+
+	for (; shifts >= 0; shifts--)
+	{
+		if ((n >> shifts) & 1)
+			printf("1");
+		else
+			printf("0");
+	}
 }
