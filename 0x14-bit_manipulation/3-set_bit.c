@@ -1,22 +1,19 @@
 #include "main.h"
 
 /**
- * get_bit -  function that sets the value of a bit to 1 at a given index.
- * @n: the number
- * @index: index starting from 0
- * Return: eachtime, 1 if it worked, else -1 if error
+ * set_bit - sets the value of a bit to 1 at a given index
+ * @n: pointer to the unsigned long integer in which to set the bit.
+ * @index: index of the bit to set (0-based).
+ * Description: function sets the bit at the specified index.
+ * Return: eachtime 1 on success, else -1 if error
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int z;
-
-	if (index > 64)
+	if (n == NULL || (index > (sizeof(unsigned long int) * 8) - 1))
 		return (-1);
 
-	for (z = 1; index > 0; index--, z *= 2)
-		;
-	*n += z;
-
+	*n |= (1 << index);
 	return (1);
 }
+
